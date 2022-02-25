@@ -1,7 +1,38 @@
 <?php
+       
+       require_once"conexao.php";
+        
+        $idCliente = $_GET['user'];
 
-    require 'conexao.php';
+        
 
+        $sql = "SELECT * FROM ´clients´ WHERE id=$idCliente";
+        $result = $conn->query($sql);
+        $row = $result->fetch_row();
+
+
+        $name = $row[1];
+        $cell = $row[2];
+        $city = $row[3];
+
+        if(isset($_POST['name'])){
+
+
+            $name = $_POST['name'];
+            $cell = $_POST['cell']; 
+            $city = $_POST['city']; 
+
+            empty($_POST[name]) ? $name = $row['1'] : '';
+            empty($_POST[cell]) ? $cell = $row['2'] : '';
+            empty($_POST[city]) ? $city = $row['3'] : '';
+
+            $sql = "UPDATE `clients` SET `name`='$name',`cell`='$cell',`city`='$city' WHERE `id` = $idCliente";
+            if ($conn->query($sql)) header('Location: list-clients.php');
+        
+
+        }else{
+            header('Location: index.php');
+        }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -34,8 +65,8 @@
     <main id="insert-client-main">
         
         <div class="form-wrapper">
-            <form method="POST" action="insert-client.php">
-                <h3>Cadastro de Clientes</h3>
+            <form method="POST" action="<?php echo $PHP_SELF; ?>">
+                <h3>Atualizar Cliente</h3>
                 <div class="input-control">
                     <label class="form-label" for="name">Nome:</label>
                     <input type="text" id="name" name="name" placeholder="Ex: João Victor Lourenço">
