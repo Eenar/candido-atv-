@@ -2,7 +2,8 @@
 
 
     $servename = "locahost";
-    $database =  "cad_clientes"
+    $database =  "cad_clientes";
+    
 
 
 
