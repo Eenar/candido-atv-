@@ -39,15 +39,21 @@
         
          <div class="clients-container">
           <?php while ($line = mysqli_fetch_assoc($query)){
+              $id = $line['id'];
               $name = $line['name'];
               $city = $line['city'];
               $cell = $line['cell'];
-
+     
               echo "
               <div class='client-card'>
                 <h3>$name</h3>
-                <p><span>Cidade? </span>$city</p>
-                <p><span>telefone? </span>$cell</p>
+                <p><span>Cidade: </span>$city</p>
+                <p><span>telefone: </span>$cell</p>
+
+                <div class='side-a-side'>
+                <a href='update-client.php?id=$id' class='btn'>Editar</a>
+                <a href='delete-client-controller.php?id=$id' class='btn'>Excluir</a>
+                </div>
               </div>"; 
           }
           ?>

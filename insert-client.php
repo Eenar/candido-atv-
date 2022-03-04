@@ -10,7 +10,7 @@
         $city = $_POST['city'];
 
         $sql = "INSERT INTO `clients` (`name`, `cell`, `city`) VALUES ('$name','$cell','$city')";
-        echo $sql;
+        
         if ($conn->query($sql)) header('Location: list-clients.php');
 
     }else{

@@ -25,7 +25,9 @@ nav{
 
 a {
     text-decoration: none;
-    color: #fff;
+}
+nav a{
+    color: #fff;   
 }
 
 .navbar-wrapper {
@@ -149,4 +151,35 @@ a {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+}
+.side-a-side{
+
+    display: flex;
+    gap: 1rem;
+    max-width: 200px;
+    margin-top: 1rem;
+   
+}
+.btn{
+    
+    color: black;
+    background-color: var(--orange-100) ;
+    border-radius: 1rem ;
+    border: 0;
+
+    width: 80px;
+    height: 2rem;
+    text-align: center;
+    padding: 0.5rem;
+    
+    
+
+    cursor: pointer;  
+    transition: all 0.2s;
+ 
+}
+.btn:hover{
+
+    filter: brightness(1.2);
+
 }

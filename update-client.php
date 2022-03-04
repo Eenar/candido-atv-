@@ -1,8 +1,3 @@
-<?php
-
-    require 'conexao.php';
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,700&display=swap" rel="stylesheet"> 
-    <title>Cadastro de Clientes</title>
+    <title>Atualizar Cliente</title>
 </head>
 
 <body>
@@ -34,19 +29,19 @@
     <main id="insert-client-main">
         
         <div class="form-wrapper">
-            <form method="POST" action="insert-client.php">
-                <h3>Cadastro de Clientes</h3>
+            <form method="POST" action="update-client-controller.php?id=<?php echo $_GET['id']?>">
+                <h3>Atualizar Cliente</h3>
                 <div class="input-control">
                     <label class="form-label" for="name">Nome:</label>
-                    <input type="text" id="name" name="name" placeholder="Ex: João Victor Lourenço">
+                    <input type="text" id="name" name="name" placeholder="Ex: João Victor Lourenço" required>
                 </div>
                 <div class="input-control">
                     <label class="form-label" for="cell">Telefone:</label>
-                    <input type="text" id="cell" name="cell" placeholder="(34) 9 9999-9999" maxlength="14">
+                    <input type="text" id="cell" name="cell" placeholder="(34) 9 9999-9999" maxlength="14" required>
                 </div>
                 <div class="input-control">
                     <label class="form-label" for="city">Cidade:</label>
-                    <select id="city-select" name="city">
+                    <select id="city-select" name="city" required>
                         <option value="">Selecione...</option>
                         <option value="Uberaba">Uberaba</option>
                         <option value="Uberlândia">Uberlândia</option>
