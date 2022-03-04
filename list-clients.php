@@ -42,7 +42,7 @@
               $name = $line['name'];
               $city = $line['city'];
               $cell = $line['cell'];
-              
+
               echo "
               <div class='client-card'>
                 <h3>$name</h3>
